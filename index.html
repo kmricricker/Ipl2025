@@ -1,62 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kmri Cricker</title>
-  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
-  <style>
-    body {
-      background-color: black; /* Set background color to black */
-      margin: 0; /* Remove default margin */
-      display: flex; /* Use flexbox for centering */
-      flex-direction: column; /* Stack elements vertically */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      height: 100vh; /* Full viewport height */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE TITLE</title>
+    <link rel="icon" type="image/png" href="LOGO.png">
+    <style>
+        /* Basic reset for full-height player */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        /* Container for the JW Player */
+        #jwplayerDiv {
+            width: 100%;
+            height: 100%;
+        }
+        .jw-button-color {
+  color: white !important; /* The !important tag may be needed to override existing styles */
+}
 
-    #video {
-      width: 100%; /* Full width */
-      max-width: 800px; /* Maximum width for larger screens */
-      aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
-    }
-
-    .telegram-button {
-      background-color: #0074d9; /* Button background color */
-      color: #fff; /* Button text color */
-      border: none; /* Remove border */
-      padding: 10px 20px; /* Padding for the button */
-      cursor: pointer; /* Pointer cursor on hover */
-      margin-top: 20px; /* Space above the button */
-    }
-
-    .telegram-button:hover {
-      background-color: #005bb5; /* Darker blue on hover */
-    }
-  </style>
+    </style>
 </head>
 <body>
-  <div id="video"></div>
-
-  <script type="text/javascript">
-    jwplayer("video").setup({
-      image: "https://i.postimg.cc/9XGtny3q/IMG-20250221-222251-004.jpg",
-      width: "100%",
-      aspectratio: "16:9",
-      autostart: false,
-      primary: "html5",
-      preload: "auto",
-      mute: false,
-      file: "https://customer-0agod1prlrzpzm4j.cloudflarestream.com/cf8ee648905593faeecbec29b1ffd2f8/manifest/video.m3u8" /* Updated video link */
-    });
-  </script>
-
-  <div style="text-align: center;">
-    <a href="https://t.me/kmricricker" target="_blank">
-      <button class="telegram-button">Join Telegram</button>
-    </a>
-  </div>
-</body>
-</html>
+    <!-- JW Player container -->
+    <div id="jwplayerDiv"></div>
+    
+    <!-- JW Player script -->
+    <script src="https://content.jwplatform.com/libraries/Z79JsmAO.js"></script>
+    <!---DASH Setup-->
+    <script>
+        jwplayer("jwplayerDiv").setup({
+            file: "https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/clients/dash/enc/f60kqesunw/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd?|drmScheme=clearkey&drmLicense=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
+",
+            drm: {
+                    clearkey: {
+                        keyId: "0000000000000000000000000",
+                        key: "00000009999000000000000000"
+                            }
+            },
+            width: "100%",
+            height: "100%",
+            controls: true,
+            displaytitle: true,
+            logo: {
+                file: '',
+                position: 'bottom-right'
+            },
+            playbackRateControls: true,
+            volumeControls: true,
+            sharing: {
+                links: [
+                    {
+                        title: 'Share on Facebook',
+                        link: 'https://www.facebook.com/sharer/sharer.php?u='
+                    },
+                    {
+                        title: 'Share on Twitter',
+                        link: 'https://twitter.com/intent/tweet?url='
+                    },
+                    {
+                        title: 'Share on LinkedIn',
+                        link: 'https://www.linkedin.com/shareArticle?mini=true&url='
+                    }
+                ]
+            },
+            abouttext: "",
+            aboutlink: "",
+            skin: {
+                active: '#FFFFFF',
+                inactive: '#FF0000'
+            },
+            autostart: true
+        });
+    </script>
