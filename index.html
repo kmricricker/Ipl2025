@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMRI CRICKER</title>
+    <link rel="icon" type="image/png" href="LOGO.png">
+    <style>
+        /* Basic reset for full-height player */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        /* Container for the JW Player */
+        #jwplayerDiv {
+            width: 100%;
+            height: 100%;
+        }
+        .jw-button-color {
+  color: white !important; /* The !important tag may be needed to override existing styles */
+}
 
+    </style>
+</head>
+<body>
+    <!-- JW Player container -->
+    <div id="jwplayerDiv"></div>
+    
+    <!-- JW Player script -->
+    <script src="https://content.jwplatform.com/libraries/Z79JsmAO.js"></script>
+    <!---DASH Setup-->
+    <script>
+        jwplayer("jwplayerDiv").setup({
+            file: "https://vu-phi.vercel.app/2504/default_ott.mpd",
+            drm: {
+                    clearkey: {
+                        keyId: "03c2e0af2f8159f9f0ce9b5dbc865f10",
+                        key: "cd84ed136b0cc71f8ab8cd4d4f6a2e4c"
+                            }
+            },
+            width: "100%",
+            height: "100%",
+            controls: true,
+            displaytitle: true,
+            logo: {
+                file: '',
+                position: 'bottom-right'
+            },
+            playbackRateControls: true,
+            volumeControls: true,
+            sharing: {
+                links: [
+                    {
+                        title: 'Share on Facebook',
+                        link: 'https://www.facebook.com/sharer/sharer.php?u='
+                    },
+                    {
+                        title: 'Share on Twitter',
+                        link: 'https://twitter.com/intent/tweet?url='
+                    },
+                    {
+                        title: 'Share on LinkedIn',
+                        link: 'https://www.linkedin.com/shareArticle?mini=true&url='
+                    }
+                ]
+            },
+            abouttext: "",
+            aboutlink: "",
+            skin: {
+                active: '#FFFFFF',
+                inactive: '#FF0000'
+            },
+            autostart: true
+        });
+    </script>
